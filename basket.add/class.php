@@ -1,11 +1,9 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 // урок https://abraxabra.ru/blog/bitrix-zametki/bitrix-d7-components/
-class CFtaskBasketTop extends CBitrixComponent
+
+CBitrixComponent::includeComponentClass("ftask:basket.top");
+class CFtaskBasketAdd extends CFtaskBasketTop
 {
-    public function getCart(){
-        $mass['CART_DATA']="basket_top";
-        return $mass;
-    }
 
     public function executeComponent(){
         $this->arResult=array_merge($this->arResult,$this->getCart());
